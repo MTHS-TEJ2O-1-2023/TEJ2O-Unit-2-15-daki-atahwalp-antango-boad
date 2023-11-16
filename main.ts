@@ -22,7 +22,7 @@ input.onButtonPressed(Button.A, function () {
 
   loopCounter = 0
   while (loopCounter <= 3) {
-    // resetting ledSprite
+    // setting ledSprite value
     ledSprite = 0
 
     while (ledSprite <= 5) {
@@ -31,11 +31,14 @@ input.onButtonPressed(Button.A, function () {
       sprite.move(1)
       ledSprite++
     }
+
     // tuning 90 degrees
     sprite.turn(Direction.Right, 90)
     loopCounter++
   }
+
   // clean up
-  basic.showIcon(IconNames.Happy)
   sprite.delete()
+  basic.clearScreen()
+  basic.showIcon(IconNames.Happy)
 })
