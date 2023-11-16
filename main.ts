@@ -6,28 +6,36 @@
 */
 
 // variables
-let loopCounter1: number = 0
-let loopCounter2: number = 0
+let ledSprite: number = 0
+let loopCounter: number = 0
 let sprite: game.LedSprite = null
 
 // on start
+basic.clearScreen()
 basic.showIcon(IconNames.Happy)
 
-// on button A, starting loop to make LED light up around the Microbits edge
+// on button A is pressed, move sprite around Microbits edge
 input.onButtonPressed(Button.A, function () {
-  // setting values
+  // prep screen
   basic.clearScreen()
-  loopCounter1 = 0
   sprite = game.createSprite(0, 0)
-  basic.pause(500)
 
-  // making LED move around Microbit edge
-  while (loopCounter1 < loopCounter2)
-  loopCounter2 = 5
-  sprite.turn(Direction.Right, 90)
-    while (loopCounter1 <= 5) {
-      sprite.move(1)
+  loopCounter = 0
+  while (loopCounter <= 3) {
+    // resetting ledSprite
+    ledSprite = 0
+
+    while (ledSprite <= 5) {
+      // moving ledSprite
       basic.pause(500)
-      loopCounter1++
+      sprite.move(1)
+      ledSprite++
+    }
+    // tuning 90 degrees
+    sprite.turn(Direction.Right, 90)
+    loopCounter++
   }
+  // clean up
+  basic.showIcon(IconNames.Happy)
+  sprite.delete()
 })
