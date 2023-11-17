@@ -11,7 +11,6 @@ let loopCounter: number = 0
 let sprite: game.LedSprite = null
 
 // on start
-basic.clearScreen()
 basic.showIcon(IconNames.Happy)
 
 // on button A is pressed, move sprite around Microbits edge
