@@ -15,7 +15,7 @@ basic.showIcon(IconNames.Happy)
 
 // on button A is pressed, move sprite around Microbits edge
 input.onButtonPressed(Button.A, function () {
-  // prep screen
+  // set up
   basic.clearScreen()
   sprite = game.createSprite(0, 0)
 
